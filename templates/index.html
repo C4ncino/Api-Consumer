@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Tareas por Hacer: {{response.counter2}}</h2>
+    <ul>
+        {% for task in response.incompleted %}
+            <li>
+                {{task.name}}
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Tareas Finalizadas: {{response.counter1}}</h2>
+    <ul>
+        {% for task in response.completed %}
+            <li>
+                {{task.name}}
+            </li>
+        {% endfor %}
+    </ul>
+    <div>
+        <form method="post">
+            <div>
+                <input type="text" name="name" id="name" placeholder="Escribe una tarea">
+            </div>
+            <div>
+                <button type="submit">Añadir Tarea</button>
+            </div>
+        </form>
+    </div>
+{% endblock%}
