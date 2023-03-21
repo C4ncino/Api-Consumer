@@ -33,8 +33,12 @@ def home ():
         return render_template('index.html', response = response)
     
     elif request.method == 'POST':
-        method = request.form['_method']
         name = request.form['name']
+
+        try:
+            method = request.form['_method']
+        except:
+            return redirect('/')
 
         if method == 'POST':
             print(request.form)
@@ -60,6 +64,8 @@ def home ():
                 return redirect('/')
             except:
                 abort(500)
+        else:
+            return redirect('/')
 
 
         

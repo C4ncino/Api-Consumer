@@ -17,7 +17,7 @@
 
     <div class="d-flex justify-content-evenly p-2">
         <div class="d-flex flex-column">
-            <h5>Tareas por Realizar: {{response.counter2}}</h5>
+            <h5>Tareas Realizadas: {{response.counter2}}</h5>
             <ul class="list-group">
                 {% for task in response.incompleted %}
                     <div class="list-group-item">
@@ -60,13 +60,13 @@
                                         <i class="bi bi-x-circle d-flex align-items-center" style="font-size: 1.8rem;"></i>
                                     </button>
                             </form>
-                            <!-- <form method="post" class="ps-1">
+                            <form method="post" class="ps-1">
                                 <input type="hidden" name="name" value="{{task.name}}">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit" class="btn btn-outline-danger border-0 rounded-circle p-2">
                                     <i class="bi bi-trash d-flex align-items-center" style="font-size: 1.8rem;"></i>
                                 </button>
-                            </form> -->
+                            </form>
                         </div>
                     </div>
                     
