@@ -1,8 +1,5 @@
 from flask import Flask, render_template, request, redirect, abort
 import requests
-import os
-
-os.environ['NO_PROXY'] = '127.0.0.1'
 
 app = Flask(__name__)
 
@@ -41,7 +38,6 @@ def home ():
             return redirect('/')
 
         if method == 'POST':
-            print(request.form)
             name = name.strip()
             try:
                 requests.post(api_url, json={'name' : name})
